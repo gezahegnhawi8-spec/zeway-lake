@@ -1,0 +1,89 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  }
+  h1, h2, h3, .font-display {
+    font-family: 'Playfair Display', Georgia, serif;
+  }
+}
+
+/* Ethiopian Tibeb Motif Border Accents */
+.tibeb-border-top {
+  position: relative;
+}
+.tibeb-border-top::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: repeating-linear-gradient(
+    90deg,
+    #cfb17d 0px,
+    #cfb17d 12px,
+    #157583 12px,
+    #157583 24px,
+    #c07228 24px,
+    #c07228 36px,
+    #0a343b 36px,
+    #0a343b 48px
+  );
+}
+
+.tibeb-accent-bar {
+  height: 3px;
+  background: repeating-linear-gradient(
+    90deg,
+    #cfb17d 0px,
+    #cfb17d 10px,
+    #157583 10px,
+    #157583 20px,
+    #c07228 20px,
+    #c07228 30px
+  );
+}
+
+/* Glassmorphism */
+.glass-teal {
+  background: rgba(10, 52, 59, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.glass-sand {
+  background: rgba(253, 251, 247, 0.9);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #f7f2e8;
+}
+::-webkit-scrollbar-thumb {
+  background: #b5e5eb;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #157583;
+}
+
+/* Ripple & luxury animations */
+@keyframes pulse-subtle {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.88; transform: scale(1.02); }
+}
+
+.animate-subtle {
+  animation: pulse-subtle 3s ease-in-out infinite;
+}
+
